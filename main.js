@@ -1,6 +1,17 @@
 // at the start we must show the letters buttons
 
 //
+const body = document.querySelector("body");
+
+const Sdiv = document.createElement('div');
+
+Sdiv.innerHTML='<h1>welcome for this game</h1>'
+
+Sdiv.class='startDiv'
+body.append(Sdiv);
+const Sbtn= document.createElement('button');
+Sbtn.innerText='START';
+Sdiv.append(Sbtn)
 
 const array = [
   "A",
@@ -13,7 +24,7 @@ const array = [
   "H",
   "I",
   "J",
-  "K",
+  "K",          
   "L",
   "M",
   "N",
@@ -48,9 +59,6 @@ teams.forEach((element) => {
   const p = document.createElement("p");
   const body = document.querySelector("body");
   body.append(p);
-//   for test
-  console.log(p);
-  // for test
   p.innerText = element;
 
   for(let i=0; i<element.length; i++){
@@ -60,3 +68,4 @@ teams.forEach((element) => {
     body.append(lines);
   }
 });
+
