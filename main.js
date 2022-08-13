@@ -55,7 +55,7 @@ teams.forEach((element) => {
 
   for(let i=0; i<element.length; i++){
     const lines=document.createElement('border');
-    const body = document.queryCommandIndeterm('body');
+    const body = document.querySelector('body');
     lines.innerText="__ "
     body.append(lines);
   }
