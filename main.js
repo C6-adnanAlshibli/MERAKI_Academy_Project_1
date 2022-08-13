@@ -51,5 +51,12 @@ teams.forEach((element) => {
 //   for test
   console.log(p);
   // for test
-  p.innerText = "adnan";
+  p.innerText = element;
+
+  for(let i=0; i<element.length; i++){
+    const lines=document.createElement('border');
+    const body = document.queryCommandIndeterm('body');
+    lines.innerText="__ "
+    body.append(lines);
+  }
 });
