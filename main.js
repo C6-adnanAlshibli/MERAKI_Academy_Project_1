@@ -4,14 +4,33 @@
 const body = document.querySelector("body");
 
 const Sdiv = document.createElement('div');
-
+const startDiv=document.querySelector('startDiv');
 Sdiv.innerHTML='<h1>welcome for this game</h1>'
 
-Sdiv.class='startDiv'
+Sdiv.className='startDiv'
 body.append(Sdiv);
 const Sbtn= document.createElement('button');
+Sbtn.className="startButton"
 Sbtn.innerText='START';
+start1=document.querySelector("startButton")
 Sdiv.append(Sbtn)
+
+
+console.log(start1,'adn',Sbtn);
+
+// make another div and show it when click start button
+const Giv = document.createElement('div');
+Giv.innerHTML='<h1>choose from letters</h1> <div class="secondDiv"</div>'
+Giv.style.display='none';
+Giv.className='gameDiv'
+body.append(Giv)
+const gameDiv=document.querySelector('gameDiv')
+
+Sbtn.addEventListener("click", () => {
+  console.log("Profile picture has been hovered");
+  Sdiv.style.display='none'
+  Giv.style.display='block'
+});
 
 const array = [
   "A",
@@ -60,7 +79,7 @@ teams.forEach((element) => {
   const body = document.querySelector("body");
   body.append(p);
   p.innerText = element;
-
+  
   for(let i=0; i<element.length; i++){
     const lines=document.createElement('border');
     const body = document.querySelector('body');
@@ -68,4 +87,5 @@ teams.forEach((element) => {
     body.append(lines);
   }
 });
+
 
