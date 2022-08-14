@@ -16,7 +16,7 @@ Sdiv.append(Sbtn)
 
 // console.log(start1,'adn',Sbtn);
 // end of first div
-
+const secondDiv=document.querySelector('.secondDiv');
 
 // make another div and show it when click start button
 // second div which name is Giv 
@@ -82,6 +82,32 @@ array.forEach((e,i) => {
   buttonsChoose.append(button);
   button.id=e;
   button.addEventListener('click',(e)=>{
+    if(choose.indexOf(e.target.id) !== 1){
+      // change later 
+      console.log('adnanone');
+      const line=document.querySelectorAll('span');
+      for(let i=0; i>choose.length; i++){
+        if(e.target.id ===choose[i]){
+          console.log(span);
+          span[i].innerText=e.target.id;
+          right++;
+        }
+      }
+      if(right===choose.length){
+        secondDiv.innerText='';
+        const image=document.createElement('img');
+        image.src='./images/youWin.png';
+        secondDiv.append(image);
+        Giv.style.display='block';
+      }
+    }else{
+      secondDiv.innerText='';
+      const imges=document.createElement('img');
+      imges.src=imgArr[count].step;
+      secondDiv.append(imges);
+      count++;
+      gameDiv.style.display='block';
+    }
     
   })
 });
@@ -116,20 +142,21 @@ Sbtn.addEventListener('click',play);
 
 
 
-// countries.forEach((element) => {
-//   element.split("");
-//   const p = document.createElement("p");
-//   const body = document.querySelector("body");
-//   body.append(p);
-//   p.innerText = element;
+countries.forEach((element) => {
+  element.split("");
+  const p = document.createElement("p");
+  const body = document.querySelector("body");
+  body.append(p);
+  p.innerText = element;
   
-//   for(let i=0; i<element.length; i++){
-//     const lines=document.createElement('border');
-//     const body = document.querySelector('body');
-//     lines.innerText="__ "
-//     body.append(lines);
-//   }
-// });
+  for(let i=0; i<element.length; i++){
+    const lines=document.createElement('span');
+    const body = document.querySelector('body');
+    lines.innerText=" __ "
+    // lines.id=line1;
+    body.append(lines);
+  }
+});
 
 
 // -----------------------------------------------------------------
