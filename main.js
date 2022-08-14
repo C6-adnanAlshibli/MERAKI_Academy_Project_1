@@ -29,6 +29,15 @@ const gameDiv=document.querySelector('.gameDiv')
 const buttonsChoose=document.querySelector('.buttonsChoose');
 // end of second div
 
+let imgArr = [ 
+  {step: './images/1.png', id:1},
+  {step: './images/2.png', id:2},
+  {step: './images/3.png', id:3},
+  {step: './images/4.png', id:4},
+  {step: './images/5.png', id:5},
+  {step: './images/6.png', id:6}
+
+]
 
 
 
@@ -63,12 +72,18 @@ const array = [
   "Y",
   "Z",
 ];
-
-array.forEach((e) => {
+let count = 0
+let right =0
+array.forEach((e,i) => {
   const button = document.createElement("button");
   button.innerText = e;
   const body = document.querySelector("body");
-  body.append(button);
+  body.append(buttonsChoose)
+  buttonsChoose.append(button);
+  button.id=e;
+  button.addEventListener('click',(e)=>{
+    
+  })
 });
 
 const countries = ["SYRIA", "JORDAN"];
@@ -121,14 +136,5 @@ Sbtn.addEventListener('click',play);
 // third div to reload the page to try again the game
 
 
-let imgArr = [ 
-  {step: './images/1.png', id:1},
-  {step: './images/2.png', id:2},
-  {step: './images/3.png', id:3},
-  {step: './images/4.png', id:4},
-  {step: './images/5.png', id:5},
-  {step: './images/6.png', id:6}
-
-]
 
 
