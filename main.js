@@ -8,7 +8,6 @@ const start = document.querySelector("#start");
 const container1 = document.querySelector(".container1");
 const container2 = document.querySelector(".container2");
 const chooseBtn = document.querySelector(".chooseBtn");
-const try1 = document.querySelector(".try");
 const one = document.querySelector(".one");
 const two = document.querySelector(".two");
 const left = document.querySelector(".left");
@@ -22,6 +21,10 @@ let imgArr = [
   { step: "./images/5.png", id: 5 },
   { step: "./images/6.png", id: 6 },
 ];
+
+function refreshPage() {
+  window.location.reload();
+}
 
 const array = [
   "A",
@@ -92,12 +95,19 @@ array.forEach((element, index) => {
   });
 });
 
-const countries = ["SYRIA", "JORDAN"];
+const countries = [
+  "SYRIA",
+  "JORDAN",
+  "EGYPT",
+  "LEBANON",
+  "SUDAN",
+  "PALESTINE",
+  "KUWAIT",
+];
 const random = () => {
   return countries[Math.floor(Math.random() * countries.length)];
 };
 const choose = random();
-
 
 const play = () => {
   console.log(choose, "aaa");
@@ -113,3 +123,4 @@ const play = () => {
   });
 };
 start.addEventListener("click", play);
+
