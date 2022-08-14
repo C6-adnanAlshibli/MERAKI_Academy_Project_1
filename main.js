@@ -38,8 +38,8 @@ const buttonsChoose=document.querySelector('.buttonsChoose');
 const array = [
   "A",
   "B",
-  " C",
-  " D",
+  "C",
+  "D",
   "E",
   "F",
   "G",
@@ -76,7 +76,7 @@ const random = ()=>{
   return countries[Math.floor(Math.random()* countries.length)];
 }
 const choose=random();
-
+//  third div
 
 const thDiv = document.createElement('div');
 const tryA= document.createElement('button');
@@ -119,4 +119,16 @@ Sbtn.addEventListener('click',play);
 
 // -----------------------------------------------------------------
 // third div to reload the page to try again the game
+
+
+let imgArr = [ 
+  {step: './images/1.png', id:1},
+  {step: './images/2.png', id:2},
+  {step: './images/3.png', id:3},
+  {step: './images/4.png', id:4},
+  {step: './images/5.png', id:5},
+  {step: './images/6.png', id:6}
+
+]
+
 
