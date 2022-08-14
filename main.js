@@ -4,14 +4,14 @@
 const body = document.querySelector("body");
 // first div
 const Sdiv = document.createElement('div');
-const startDiv=document.querySelector('startDiv');
-Sdiv.innerHTML='<h1>welcome for this game</h1>'
 Sdiv.className='startDiv'
+const startDiv=document.querySelector('.startDiv');
+Sdiv.innerHTML='<h1>welcome for this game</h1>'
 body.append(Sdiv);
 const Sbtn= document.createElement('button');
 Sbtn.className="startButton"
 Sbtn.innerText='START';
-start1=document.querySelector("startButton")
+start1=document.querySelector(".startButton")
 Sdiv.append(Sbtn)
 
 // console.log(start1,'adn',Sbtn);
@@ -25,16 +25,15 @@ Giv.className='gameDiv';
 Giv.innerHTML='<h1>ARAB COUNTRIES</h1> <div class="secondDiv" </div> <div class="buttonsChoose"> </div>'
 Giv.style.display='none';
 body.append(Giv)
-const gameDiv=document.querySelector('gameDiv')
+const gameDiv=document.querySelector('.gameDiv')
+const buttonsChoose=document.querySelector('.buttonsChoose');
 // end of second div
-// third div to reload the page to try again the game
-const thDiv = document.createElement('div');
 
-Sbtn.addEventListener("click", () => {
-  // console.log("Profile picture has been hovered");
-  Sdiv.style.display='none'
-  Giv.style.display='block'
-});
+
+
+
+
+
 
 const array = [
   "A",
@@ -72,30 +71,52 @@ array.forEach((e) => {
   body.append(button);
 });
 
-const countries = ["syria", "jordan"];
-
-
-
+const countries = ["SYRIA", "JORDAN"];
 const random = ()=>{
   return countries[Math.floor(Math.random()* countries.length)];
 }
 const choose=random();
 
 
+const thDiv = document.createElement('div');
+const tryA= document.createElement('button');
+tryA.innerText='TRY AGAIN'
+thDiv.className='thirdDiv'
+thDiv.append(tryA);
+body.append(thDiv);
+const thirdDiv=document.querySelector('thirdDiv');
 
-countries.forEach((element) => {
-  element.split("");
-  const p = document.createElement("p");
-  const body = document.querySelector("body");
-  body.append(p);
-  p.innerText = element;
+const play = ()=>{
+  console.log(choose,'aaa');
+  Sdiv.style.display='none'
+    Giv.style.display='block'
+}
+Sbtn.addEventListener('click',play);
+// Sbtn.addEventListener("click", () => {
+//   // console.log("Profile picture has been hovered");
+//   Sdiv.style.display='none'
+//   Giv.style.display='block'
+// });
+
+
+
+
+// countries.forEach((element) => {
+//   element.split("");
+//   const p = document.createElement("p");
+//   const body = document.querySelector("body");
+//   body.append(p);
+//   p.innerText = element;
   
-  for(let i=0; i<element.length; i++){
-    const lines=document.createElement('border');
-    const body = document.querySelector('body');
-    lines.innerText="__ "
-    body.append(lines);
-  }
-});
+//   for(let i=0; i<element.length; i++){
+//     const lines=document.createElement('border');
+//     const body = document.querySelector('body');
+//     lines.innerText="__ "
+//     body.append(lines);
+//   }
+// });
 
+
+// -----------------------------------------------------------------
+// third div to reload the page to try again the game
 
