@@ -2,11 +2,10 @@
 
 //
 const body = document.querySelector("body");
-
+// first div
 const Sdiv = document.createElement('div');
 const startDiv=document.querySelector('startDiv');
 Sdiv.innerHTML='<h1>welcome for this game</h1>'
-
 Sdiv.className='startDiv'
 body.append(Sdiv);
 const Sbtn= document.createElement('button');
@@ -15,19 +14,24 @@ Sbtn.innerText='START';
 start1=document.querySelector("startButton")
 Sdiv.append(Sbtn)
 
+// console.log(start1,'adn',Sbtn);
+// end of first div
 
-console.log(start1,'adn',Sbtn);
 
 // make another div and show it when click start button
+// second div which name is Giv 
 const Giv = document.createElement('div');
-Giv.innerHTML='<h1>choose from letters</h1> <div class="secondDiv"</div>'
+Giv.className='gameDiv';
+Giv.innerHTML='<h1>ARAB COUNTRIES</h1> <div class="secondDiv" </div> <div class="buttonsChoose"> </div>'
 Giv.style.display='none';
-Giv.className='gameDiv'
 body.append(Giv)
 const gameDiv=document.querySelector('gameDiv')
+// end of second div
+// third div to reload the page to try again the game
+const thDiv = document.createElement('div');
 
 Sbtn.addEventListener("click", () => {
-  console.log("Profile picture has been hovered");
+  // console.log("Profile picture has been hovered");
   Sdiv.style.display='none'
   Giv.style.display='block'
 });
@@ -68,12 +72,18 @@ array.forEach((e) => {
   body.append(button);
 });
 
-const teams = ["barcelona", "madrid"];
+const countries = ["syria", "jordan"];
 
-const random = Math.floor(Math.random() * teams.length);
-console.log(random);
 
-teams.forEach((element) => {
+
+const random = ()=>{
+  return countries[Math.floor(Math.random()* countries.length)];
+}
+const choose=random();
+
+
+
+countries.forEach((element) => {
   element.split("");
   const p = document.createElement("p");
   const body = document.querySelector("body");
