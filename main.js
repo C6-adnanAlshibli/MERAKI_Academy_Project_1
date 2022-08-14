@@ -3,30 +3,44 @@
 //
 const body = document.querySelector("body");
 // first div
-const Sdiv = document.createElement('div');
-Sdiv.className='startDiv'
-const startDiv=document.querySelector('.startDiv');
-Sdiv.innerHTML='<h1>welcome for this game</h1>'
-body.append(Sdiv);
-const Sbtn= document.createElement('button');
-Sbtn.className="startButton"
-Sbtn.innerText='START';
-start1=document.querySelector(".startButton")
-Sdiv.append(Sbtn)
+const Sdiv = document.querySelector('.container');
+const start = document.querySelector('#start')
+const container1 =document.querySelector('.container1')
+const container2 =document.querySelector('.container2')
+const chooseBtn = document.querySelector("#chooseBtn");
+const try1 = document.querySelector(".try");
+const one = document.querySelector('.one')
+const two= document.querySelector('.two')
+const left = document.querySelector(".left");
+const right = document.querySelector(".right");
+
+
+
+
+
+// Sdiv.className='startDiv'
+// const startDiv=document.querySelector('.startDiv');
+// Sdiv.innerHTML='<h1>welcome for this game</h1>'
+// body.append(Sdiv);
+// const Sbtn= document.createElement('button');
+// Sbtn.className="startButton"
+// Sbtn.innerText='START';
+// start1=document.querySelector(".startButton")
+// Sdiv.append(Sbtn)
 
 // console.log(start1,'adn',Sbtn);
 // end of first div
-const secondDiv=document.querySelector('.secondDiv');
+// const secondDiv=document.querySelector('.secondDiv');
 
 // make another div and show it when click start button
 // second div which name is Giv 
-const Giv = document.createElement('div');
-Giv.className='gameDiv';
-Giv.innerHTML='<h1>ARAB COUNTRIES</h1> <div class="secondDiv" </div> <div class="buttonsChoose"> </div>'
-Giv.style.display='none';
-body.append(Giv)
-const gameDiv=document.querySelector('.gameDiv')
-const buttonsChoose=document.querySelector('.buttonsChoose');
+// const Giv = document.createElement('div');
+// Giv.className='gameDiv';
+// Giv.innerHTML='<h1>ARAB COUNTRIES</h1> <div class="secondDiv" </div> <div class="buttonsChoose"> </div>'
+// Giv.style.display='none';
+// body.append(Giv)
+// const gameDiv=document.querySelector('.gameDiv')
+// const buttonsChoose=document.querySelector('.buttonsChoose');
 // end of second div
 
 let imgArr = [ 
@@ -73,7 +87,7 @@ const array = [
   "Z",
 ];
 let count = 0
-let right =0
+// let right =0
 array.forEach((e,i) => {
   const button = document.createElement("button");
   button.innerText = e;
@@ -96,7 +110,7 @@ array.forEach((e,i) => {
       if(right===choose.length){
         secondDiv.innerText='';
         const image=document.createElement('img');
-        image.src='./images/youWin.png';
+        image.src='./images/win.png';
         secondDiv.append(image);
         Giv.style.display='block';
       }
@@ -119,13 +133,13 @@ const random = ()=>{
 const choose=random();
 //  third div
 
-const thDiv = document.createElement('div');
-const tryA= document.createElement('button');
-tryA.innerText='TRY AGAIN'
-thDiv.className='thirdDiv'
-thDiv.append(tryA);
-body.append(thDiv);
-const thirdDiv=document.querySelector('thirdDiv');
+// const thDiv = document.createElement('div');
+// const tryA= document.createElement('button');
+// tryA.innerText='TRY AGAIN'
+// thDiv.className='thirdDiv'
+// thDiv.append(tryA);
+// body.append(thDiv);
+// const thirdDiv=document.querySelector('thirdDiv');
 
 const play = ()=>{
   console.log(choose,'aaa');
