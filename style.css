@@ -1,0 +1,17 @@
+*{
+    padding: 0;
+    margin: 0;
+
+}
+body{
+    display: grid;
+    text-align: center;
+}
+.container{
+    display: grid ;
+    align-items: center;
+    align-self:center;
+}
+.container1{
+    text-align: center;
+}
