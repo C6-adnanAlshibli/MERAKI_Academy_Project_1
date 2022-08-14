@@ -51,7 +51,7 @@ let imgArr = [
   {step: './images/5.png', id:5},
   {step: './images/6.png', id:6}
 
-]
+];
 
 
 
@@ -87,27 +87,28 @@ const array = [
   "Z",
 ];
 let count = 0
-// let right =0
-array.forEach((e,i) => {
+let count2 =0
+array.forEach((ele,i) => {
   const button = document.createElement("button");
-  button.innerText = e;
-  const body = document.querySelector("body");
-  body.append(buttonsChoose)
+  button.innerText = ele;
+  right.append(buttonsChoose)
   buttonsChoose.append(button);
-  button.id=e;
+  button.id=ele;
   button.addEventListener('click',(e)=>{
-    if(choose.indexOf(e.target.id) !== 1){
+    if(choose.indexOf(e.target.id) !== -1){
       // change later 
-      console.log('adnanone');
+      button.style.backgroundColor='red';
       const line=document.querySelectorAll('span');
-      for(let i=0; i>choose.length; i++){
+
+      // i hate < & > 
+      for(let i=0; i<choose.length; i++){
         if(e.target.id ===choose[i]){
-          console.log(span);
-          span[i].innerText=e.target.id;
-          right++;
+          console.log(line);
+          line[i].innerText=e.target.id;
+          count2++;
         }
       }
-      if(right===choose.length){
+      if(count2===choose.length){
         secondDiv.innerText='';
         const image=document.createElement('img');
         image.src='./images/win.png';
@@ -115,7 +116,7 @@ array.forEach((e,i) => {
         Giv.style.display='block';
       }
     }else{
-      secondDiv.innerText='';
+      container2.innerText='';
       const imges=document.createElement('img');
       imges.src=imgArr[count].step;
       secondDiv.append(imges);
@@ -143,10 +144,19 @@ const choose=random();
 
 const play = ()=>{
   console.log(choose,'aaa');
-  Sdiv.style.display='none'
-    Giv.style.display='block'
+  container1.style.display='none'
+    container2.style.display='block'
+choose.split('').forEach((element,index)=>{
+  if(element !== " "){
+    const lines = document.createElement('span');
+    lines.innerText=" __ "
+    lines.id=index;
+    Sdiv.append(lines);
+  }
+})
+
 }
-Sbtn.addEventListener('click',play);
+start.addEventListener('click',play);
 // Sbtn.addEventListener("click", () => {
 //   // console.log("Profile picture has been hovered");
 //   Sdiv.style.display='none'
@@ -156,21 +166,7 @@ Sbtn.addEventListener('click',play);
 
 
 
-countries.forEach((element) => {
-  element.split("");
-  const p = document.createElement("p");
-  const body = document.querySelector("body");
-  body.append(p);
-  p.innerText = element;
-  
-  for(let i=0; i<element.length; i++){
-    const lines=document.createElement('span');
-    const body = document.querySelector('body');
-    lines.innerText=" __ "
-    // lines.id=line1;
-    body.append(lines);
-  }
-});
+
 
 
 // -----------------------------------------------------------------
