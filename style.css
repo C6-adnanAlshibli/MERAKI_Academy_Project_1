@@ -4,10 +4,14 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     color: aliceblue;
+    display: flex;
 }
 
 .container{
     margin: auto;
+    max-width: 500px;
+    font-size: 20px;
+    color: wheat;
 }
 
 .container2{
@@ -18,12 +22,24 @@ button{
     border-radius: 2px;
     border: solid 1px;
     margin: 2px;
+    text-align: center;
 }
 
 h1{
     color: aliceblue;
+    text-align: center;
 }
 button:hover{
     background-color: blueviolet;
     padding: 20px;
+}
+h2{
+    text-align: center;
+    color: green;
+    background-color: wheat;
+}
+p{
+    font-size: 70px;
+    line-height: 15px;
+
 }

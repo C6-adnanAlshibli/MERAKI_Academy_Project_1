@@ -103,9 +103,9 @@ const countries = [
   "SYRIA",
   "JORDAN",
   "EGYPT",
-  "LEBANON",
+  "QATAR",
   "SUDAN",
-  "PALESTINE",
+  "IRAQ",
   "KUWAIT",
 ];
 const random = () => {
