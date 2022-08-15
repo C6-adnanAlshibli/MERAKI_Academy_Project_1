@@ -1,8 +1,5 @@
-// at the start we must show the letters buttons
 
-//
 const body = document.querySelector("body");
-// first div
 const Sdiv = document.querySelector(".container");
 const start = document.querySelector("#start");
 const container1 = document.querySelector(".container1");
@@ -12,6 +9,11 @@ const one = document.querySelector(".one");
 const two = document.querySelector(".two");
 const left = document.querySelector(".left");
 const right = document.querySelector(".right");
+
+var audio = new Audio("./music/win.wav");
+
+
+
 
 let imgArr = [
   { step: "./images/1.png", id: 1 },
@@ -69,11 +71,8 @@ array.forEach((element, index) => {
     if (choose.indexOf(e.target.id) !== -1) {
       buttons.style.backgroundColor = "blue";
       const span = document.querySelectorAll("span");
-      // console.log("span",span.length)
-      // span[word.indexOf(e.target.id)].innerText=(e.target.id);
       for (let i = 0; i < choose.length; i++) {
         if (e.target.id === choose[i]) {
-          // console.log("span[i]",span[i],span)
           span[i].innerText = e.target.id;
           count2++;
         }
@@ -82,8 +81,11 @@ array.forEach((element, index) => {
         one.innerText = "";
         const image1 = document.createElement("img");
         image1.src = "./images/win.png";
+        document.onclick = function() {
+          audio.play();
+        }
         one.append(image1);
-        con3.style.display = "block";
+
       }
     } else {
       one.innerText = "";
@@ -91,6 +93,8 @@ array.forEach((element, index) => {
       image.src = imgArr[count].step;
       one.append(image);
       count++;
+      
+   
     }
   });
 });
@@ -124,3 +128,10 @@ const play = () => {
 };
 start.addEventListener("click", play);
 
+
+
+
+function music() {
+  let audio = document.getElementById("audio");
+  audio.play()
+}
